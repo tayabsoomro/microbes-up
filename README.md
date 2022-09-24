@@ -59,6 +59,8 @@ The backend is realized witch express and a sqlite3 database.
 
 #### Installation
 
+NOTE: npm install fails on newer versions of node, it is currently working with node 9.11.2
+
 install `nodejs`
 
 for the backend install `sqlite3` with your favorite package manager
