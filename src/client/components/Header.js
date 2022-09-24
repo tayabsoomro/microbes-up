@@ -24,7 +24,6 @@ export default class Header extends React.Component {
         return (
             <header style={{height: "25px"}}>
                 <p style={{float: "left"}}>
-                    {"Header: "}
                     <Link to="/">Home</Link>
                 </p>
                 <p style={{float: "right"}}>
