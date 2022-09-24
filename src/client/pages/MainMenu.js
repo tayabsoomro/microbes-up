@@ -5,13 +5,11 @@ import { Button, ButtonGroup, Well } from "react-bootstrap";
 export default class MainMenu extends React.Component {
     render () {
         return (
-            <Well>
-                <h2>Main Menu</h2>
-            <ButtonGroup vertical block>
-                <Link to="/game"><Button bsSize="large" block>Start Game</Button></Link>
-                <Link to="/content"><Button bsSize="large" block>Edit Content</Button></Link>
-            </ButtonGroup>
-                </Well>
+            <div className="mu-main col-lg-12 border-black">
+                <img src="https://m.tetl.ca/assets/imgs/microbes-up-splash.gif" width="500" />
+                <br />           
+                <button onClick={() => window.location.href = 'https://m.tetl.ca/game'} className="btn btn-primary btn-lg" style={{alignSelf: "stretch"}}>Play</button>
+            </div>
         );
     }
 }

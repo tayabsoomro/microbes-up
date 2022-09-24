@@ -15,7 +15,6 @@ export default class App extends React.Component {
     render () {
         return (
             <div>
-                <Header />
                 <div>
                     <Switch>
                         <Route path="/game" component={GameMenu}/>
@@ -23,7 +22,6 @@ export default class App extends React.Component {
                         <Route component={MainMenu}/>
                     </Switch>
                 </div>
-                <Footer />
             </div>
         );
     }

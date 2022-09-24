@@ -222,7 +222,7 @@ export default class Game extends React.Component {
         // }
     }
 
-    renderGame() {
+    renderGame(nosleep) {
         const {gameState, currentEntry, progress, gameTime, skipped, solved} = this.state;
         const tag = EntryStore.currentGameTag;
         const entryCount = solved + skipped;
@@ -251,7 +251,7 @@ export default class Game extends React.Component {
         default:
             return (<div>
                         <h1>{`Start playing the tag "${tag.text}"`}</h1>
-                        <Button bsStyle="primary" bsSize="large" block onClick={() => this.startGame()}> Start Game </Button>
+                        <Button bsStyle="primary" bsSize="large" block onClick={() => {this.startGame(); nosleep()}}> Start Game </Button>
                     </div>);
 
         }
@@ -266,11 +266,11 @@ export default class Game extends React.Component {
         return (
             <div>
                 <ReactNoSleep>
-                    {({ isOn, enable, disable }) => (
+                {({ isOn, enable, disable }) => (
                     <Well className="game-well">
-                        {this.renderGame()}
+                        {this.renderGame(enable)}
                     </Well>
-                    )}
+                )}
                 </ReactNoSleep>
             </div>
         );
