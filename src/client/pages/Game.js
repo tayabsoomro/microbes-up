@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { Button, ProgressBar, Well} from "react-bootstrap";
 import ReactNoSleep from 'react-no-sleep';
+import screenfull from "screenfull";
 
 import EntryStore from "../EntryStore";
 
@@ -277,7 +278,7 @@ export default class Game extends React.Component {
                             <h3>{tag.text}</h3>
                         </div>
                         <div className="vspacer-20" />
-                        <button className="btn btn-success" onClick={() => { this.startCountdown(); nosleep() }}>Start</button>
+                        <button className="btn btn-success" onClick={() => { this.startCountdown(); screenfull.request(); nosleep() }}>Start</button>
                         {/* <h2>{`Start playing the tag "${tag.text}"`}</h2>
                         <Button bsStyle="primary" bsSize="large" block onClick={() => {this.startGame(); nosleep()}}> Start Game </Button> */}
                     </div>);
