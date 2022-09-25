@@ -249,7 +249,7 @@ export default class Game extends React.Component {
         case "playing":
             return (<div className="col-md-12">
                         <div className="vspacer-50" />
-                        <h1>{currentEntry.text}</h1>
+                <h1 style="color:white; font-size:60px; text-shadow: 4px 4px black;">{currentEntry.text}</h1>
                         <div className="vspacer-20" />
                         <div className="d-flex flex-row justify-content-around">
                             <button className="btn h-100 btn-xs btn-success" onClick={() => { this.solveEntry(); }}>Solved</button>
@@ -270,14 +270,14 @@ export default class Game extends React.Component {
 
         case "new":
         default:
-            return (<div className="d-flex flex-column col-md-10 align-items-center">
-                        <div className="vspacer-50" />
+                return (<div style="color:white; font-size:60px; text-shadow: 2px 2px black;" className="d-flex flex-column col-md-10 align-items-center">
+                    <div className="vspacer-50" />
                         <div className=" ml-5 mr-5 col-md-12 text-center ml-5">
                             <h3 className="ml-5">Start playing</h3>
                             <br />
                             <h3>{tag.text}</h3>
                         </div>
-                        <div className="vspacer-20" />
+                    <div className="vspacer-10" />
                         <button className="btn btn-success" onClick={() => { this.startCountdown(); screenfull.request(); nosleep() }}>Start</button>
                         {/* <h2>{`Start playing the tag "${tag.text}"`}</h2>
                         <Button bsStyle="primary" bsSize="large" block onClick={() => {this.startGame(); nosleep()}}> Start Game </Button> */}
