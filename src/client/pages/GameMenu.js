@@ -35,7 +35,7 @@ export default class GameMenu extends React.Component {
 
 let mapTags = (tag) => {
     return (
-        <div className="card col-lg-3 m-2" onClick={() => window.location = '/game/' + tag.id}>
+        <div style="width:200px" className="card col-md-3 m-2" onClick={() => window.location = '/game/' + tag.id}>
             <img src={"../../assets/imgs/" + snakeCase(tag.text) + ".png"} class="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="text-center">{tag.text} ({tag.count})</h5>

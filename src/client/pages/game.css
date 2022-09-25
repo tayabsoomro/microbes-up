@@ -4,7 +4,9 @@
 }
 
 .play-btn {
-    -webkit-animation: cssAnimation 4s forwards; 
+    -webkit-animation: cssAnimation 4s forwards;
+    -o-animation: cssAnimation 4s forwards;
+    -moz-animation: cssAnimation 4s forwards;
     animation: cssAnimation 4s forwards;
     height: 170px;
 }
