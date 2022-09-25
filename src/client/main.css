@@ -4,8 +4,6 @@ body {
 
 .border-black {
     border: 1px solid black;
-    min-height: 100vh;
-
 }
 
 .categories-bg {

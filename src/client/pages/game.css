@@ -3,13 +3,23 @@
     margin: 0;
 }
 
-.game-bg {
 
+.vspacer-50 {
+    height: 100px;
+}
+
+.vspacer-20 {
+    height: 20px;
+}
+
+
+.game-bg {
     background-image: url('https://i.imgur.com/Qndm0UT.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #5E18EB;
+    min-height: 100vh;
 }
 
 .play-btn {

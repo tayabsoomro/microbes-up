@@ -246,16 +246,21 @@ export default class Game extends React.Component {
                     <p>Countdown!</p>
                 )
         case "playing":
-            return (<div className="col-lg-12 border-black">
+            return (<div className="col-md-12">
+                        <div className="vspacer-50" />
                         <h1>{currentEntry.text}</h1>
-                        <Button bsStyle="success" bsSize="large" className="game-btn-solve" onClick={this.solveEntry}>solved</Button>
-                        <Button bsStyle="warning" bsSize="large" className="game-btn-skip" onClick={this.skipEntry}>skip</Button>
-                        <p style={{textAlign: "center"}}>{`Solved: ${solved}, Skipped: ${skipped}`}</p>
-                        <ProgressBar active now={progress} />
+                        <div className="vspacer-20" />
+                        <div className="d-flex flex-row justify-content-around">
+                            <button className="btn h-100 btn-xs btn-success">Solved</button>
+                            <button className="btn h-100 btn-warning">Skip</button>
+                        </div>
+                        {/* <p style={{textAlign: "center"}}>{`Solved: ${solved}, Skipped: ${skipped}`}</p>
+                        <ProgressBar active now={progress} /> */}
                     </div>);
 
         case "finished":
             return (<div>
+                        <div className="vspacer-20" />
                         <h2>{`In ${gameSeconds}s you solved ${solved}`}</h2>
                         <h1 className="huge">{`${solvedPct}%`}</h1>
                         <h3>{`Replay the tag "${tag.text}"?`}</h3>
@@ -264,9 +269,17 @@ export default class Game extends React.Component {
 
         case "new":
         default:
-            return (<div>
-                        <h1>{`Start playing the tag "${tag.text}"`}</h1>
-                <Button bsStyle="primary" bsSize="large" block onClick={() => { this.startCountdown(); nosleep() }}> Start Game </Button>
+            return (<div className="d-flex flex-column col-md-10 align-items-center">
+                        <div className="vspacer-50" />
+                        <div className=" ml-5 mr-5 col-md-12 text-center ml-5">
+                            <h3 className="ml-5">Start playing</h3>
+                            <br />
+                            <h3>{tag.text}</h3>
+                        </div>
+                        <div className="vspacer-20" />
+                        <button className="btn btn-success" onClick={() => { this.startCountdown(); nosleep() }}>Start</button>
+                        {/* <h2>{`Start playing the tag "${tag.text}"`}</h2>
+                        <Button bsStyle="primary" bsSize="large" block onClick={() => {this.startGame(); nosleep()}}> Start Game </Button> */}
                     </div>);
 
         }
@@ -282,7 +295,7 @@ export default class Game extends React.Component {
             <div>
                 <ReactNoSleep>
                 {({ isOn, enable, disable }) => (
-                    <div className="col-lg-12 border-black game-bg">
+                    <div className="col-lg-12 game-bg">
                         <Well className="game-well">
                             {this.renderGame(enable)}
                         </Well>
