@@ -252,8 +252,8 @@ export default class Game extends React.Component {
                         <h1>{currentEntry.text}</h1>
                         <div className="vspacer-20" />
                         <div className="d-flex flex-row justify-content-around">
-                            <button className="btn h-100 btn-xs btn-success">Solved</button>
-                            <button className="btn h-100 btn-warning">Skip</button>
+                            <button className="btn h-100 btn-xs btn-success" onClick={() => { this.solveEntry(); }}>Solved</button>
+                            <button className="btn h-100 btn-warning" onClick={() => { this.skipEntry(); }}>Skip</button>
                         </div>
                         {/* <p style={{textAlign: "center"}}>{`Solved: ${solved}, Skipped: ${skipped}`}</p>
                         <ProgressBar active now={progress} /> */}
