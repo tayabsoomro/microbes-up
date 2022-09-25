@@ -3,6 +3,15 @@
     margin: 0;
 }
 
+.game-bg {
+
+    background-image: url('https://i.imgur.com/Qndm0UT.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #5E18EB;
+}
+
 .play-btn {
     -webkit-animation: cssAnimation 4s forwards;
     -o-animation: cssAnimation 4s forwards;

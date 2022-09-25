@@ -231,7 +231,7 @@ export default class Game extends React.Component {
 
         switch(gameState) {
         case "playing":
-            return (<div>
+            return (<div className="col-lg-12 border-black">
                         <h1>{currentEntry.text}</h1>
                         <Button bsStyle="success" bsSize="large" className="game-btn-solve" onClick={this.solveEntry}>solved</Button>
                         <Button bsStyle="warning" bsSize="large" className="game-btn-skip" onClick={this.skipEntry}>skip</Button>
@@ -267,9 +267,11 @@ export default class Game extends React.Component {
             <div>
                 <ReactNoSleep>
                 {({ isOn, enable, disable }) => (
-                    <Well className="game-well">
-                        {this.renderGame(enable)}
-                    </Well>
+                    <div className="col-lg-12 border-black game-bg">
+                        <Well className="game-well">
+                            {this.renderGame(enable)}
+                        </Well>
+                    </div>
                 )}
                 </ReactNoSleep>
             </div>

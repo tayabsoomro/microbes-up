@@ -65,22 +65,13 @@ class Categories extends React.Component {
         const tagLis = tags.map(t => mapTags(t));
 
         return (
-            <div className="col-lg-12 border-black">
+            <div className="col-lg-12 categories-bg">
                 <br />
                 <h1>Choose a category</h1>
-                <div className="col-lg-12 d-flex border-black flex-wrap justify-content-center">
+                <div className="col-lg-12 d-flex flex-wrap justify-content-center">
                     {tagLis}
                 </div> 
             </div>
         );
     }
 }
-
-
-// <Well>
-//             <h2>Categories</h2>
-//             <ButtonGroup vertical block>
-//             <Link to="/game/random"><Button block bsSize="large"> random</Button></Link>
-//             {tagLis}
-//             </ButtonGroup>
-//             </Well

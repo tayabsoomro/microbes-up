@@ -8,6 +8,10 @@ body {
 
 }
 
+.categories-bg {
+    background-image: url('https://i.imgur.com/eOpZA32.png')
+}
+
 .mu-main {
     display: flex;
     flex-direction: column;
