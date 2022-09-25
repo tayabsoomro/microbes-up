@@ -9,6 +9,7 @@ import "./game.css";
 
 const successAudio = new Audio("/assets/success.mp3");
 const failureAudio = new Audio("/assets/failure.mp3");
+const countdownAudio = new Audio("/assets/countdown.mp3");
 
 
 
@@ -104,6 +105,16 @@ export default class Game extends React.Component {
         if (window) {
             window.removeEventListener('devicemotion', this.motionListener, false);
         }
+    }
+
+    startCountdown() {
+        this.setState(() => {
+            return {
+                gameState: 'countdown',
+            }
+        });
+        triggerAudio(countdownAudio);
+        setTimeout(this.startGame, 3000);
     }
 
     startGame() {
@@ -230,6 +241,10 @@ export default class Game extends React.Component {
         const gameSeconds = (gameTime / 1000).toFixed(1);
 
         switch(gameState) {
+            case "countdown":
+                return (
+                    <p>Countdown!</p>
+                )
         case "playing":
             return (<div className="col-lg-12 border-black">
                         <h1>{currentEntry.text}</h1>
@@ -251,7 +266,7 @@ export default class Game extends React.Component {
         default:
             return (<div>
                         <h1>{`Start playing the tag "${tag.text}"`}</h1>
-                        <Button bsStyle="primary" bsSize="large" block onClick={() => {this.startGame(); nosleep()}}> Start Game </Button>
+                <Button bsStyle="primary" bsSize="large" block onClick={() => { this.startCountdown(); nosleep() }}> Start Game </Button>
                     </div>);
 
         }
