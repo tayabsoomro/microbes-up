@@ -40,10 +40,6 @@
     100% {opacity: 1;}
 }
 
-.game-well {
-    border: 1px solid green;
-}
-
 .game-btn-skip, .game-btn-solve {
     height: 200px;
     /* position: absolute; */
