@@ -26,15 +26,7 @@ export default class GameMenu extends React.Component {
             <div>
             <Switch>
                 <Route path="/game/:id" component={ ({match}) => <Game match={match}/>} />
-                <Route render={() =>
-                               <Well>
-                               <h2>Categories</h2>
-                               <ButtonGroup vertical block>
-                               <Link to="/game/random"><Button block bsSize="large"> random</Button></Link>
-                               {tagLis}
-                               </ButtonGroup>
-                               </Well>
-                              } />
+                <Route component={Categories} />
             </Switch>
             </div>
         );
@@ -43,15 +35,52 @@ export default class GameMenu extends React.Component {
 
 let mapTags = (tag) => {
     return (
-        <Link key={tag.id} to={"/game/"+ (tag.id)}>
-            <Button bsSize="large" block>
-            {tag.text}
-            <Badge>{tag.count}</Badge>
-            </Button>
-        </Link>
+        <div className="card col-lg-3 m-2" onClick={() => window.location = '/game/' + tag.id}>
+            <img src={"../../assets/imgs/" + snakeCase(tag.text) + ".png"} class="card-img-top" alt="..." />
+            <div className="card-body">
+                <h5 className="text-center">{tag.text} ({tag.count})</h5>
+            </div>
+        </div>
     );
 };
+
+const snakeCase = string => {
+    return string.replace(/\W+/g, " ")
+      .split(/ |\B(?=[A-Z])/)
+      .map(word => word.toLowerCase())
+      .join('_');
+};
+
+
 
 let randomIntRange = (from, to) => {
     return Math.floor(Math.random() * (to + 1 - from)) + from;
 }
+
+
+class Categories extends React.Component {
+    render() {
+        const tags = EntryStore.popularTags;
+
+        const tagLis = tags.map(t => mapTags(t));
+
+        return (
+            <div className="col-lg-12 border-black">
+                <br />
+                <h1>Choose a category</h1>
+                <div className="col-lg-12 d-flex border-black flex-wrap justify-content-center">
+                    {tagLis}
+                </div> 
+            </div>
+        );
+    }
+}
+
+
+// <Well>
+//             <h2>Categories</h2>
+//             <ButtonGroup vertical block>
+//             <Link to="/game/random"><Button block bsSize="large"> random</Button></Link>
+//             {tagLis}
+//             </ButtonGroup>
+//             </Well
