@@ -3,6 +3,22 @@
     margin: 0;
 }
 
+.play-btn {
+    -webkit-animation: cssAnimation 4s forwards; 
+    animation: cssAnimation 4s forwards;
+    height: 170px;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 0;}
+    40%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 0;}
+    40%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 .game-well {
     border: 1px solid green;
 }

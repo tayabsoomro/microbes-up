@@ -6,9 +6,11 @@ export default class MainMenu extends React.Component {
     render () {
         return (
             <div className="mu-main col-lg-12 border-black">
-                <img src="https://m.tetl.ca/assets/imgs/microbes-up-splash-once.gif" width="500" />
+                <img src="assets/imgs/microbes-on-the-mind-splash.gif" width="500" />
                 <br />           
-                <button onClick={() => window.location.href = 'https://m.tetl.ca/game'} className="btn btn-primary btn-lg" style={{alignSelf: "stretch"}}>Play</button>
+                <a href="game">
+                    <img className="play-btn" src="assets/imgs/play.png"></img>
+                </a>
             </div>
         );
     }
